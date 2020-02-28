@@ -114,7 +114,7 @@ const ColorList = ({ colors, updateColors }) => {
         {adding && (
           <form onSubmit={saveAdd}>
             <legend> add color:</legend>
-            <a href='http://htmlcolorcodes.com' target='_blank'> find a color </a>
+            <a href='http://htmlcolorcodes.com' target='_blank' rel="noopener noreferrer"> find a color </a>
             <label>color name:
             <input onChange={event => setColorToAdd({...colorToAdd, color: event.target.value})} value={colorToAdd.color} /></label>
             <label>hex code:
