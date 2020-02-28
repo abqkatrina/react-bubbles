@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Pack } from "@potion/layout";
 import { Svg, Circle } from "@potion/element";
-import { LinearGradient } from "@potion/extra";
 
 const Bubbles = ({ colors }) => {
   const [bubbleData, setBubbleData] = useState([]);
@@ -16,14 +15,7 @@ const Bubbles = ({ colors }) => {
   return (
     <div className="bubble-wrap">
       <p>bubbles</p>
-      <Svg width={400} height={400}>
-        <LinearGradient
-          id="my-gradient"
-          x1="(colors.code.hex) 5%"
-          x2='(colors.code.hex) 40%'
-          y1='(colors.code.hex) 70%'
-          y2='(colors.code.hex) 100%'
-        />
+      <Svg width={400} height={400} >
         <Pack
           data={{
             children: bubbleData
@@ -44,8 +36,7 @@ const Bubbles = ({ colors }) => {
                       cx={x}
                       cy={y}
                       r={r}
-                      fill='url(#my-gradient)'
-                      
+                      fill={colors[i].code.hex}
                     />
                   );
                 }
