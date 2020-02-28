@@ -12,7 +12,7 @@ const Login = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios.post(`http://localhost:5000/api/login`, login)
+    axios.post(`http://localhost:5000/api/login`, { username: 'Lambda School', password: 'i<3Lambd4'})
     .then(response => {
       localStorage.setItem('token', response.data.payload)
       props.history.push('/bubblepage')
